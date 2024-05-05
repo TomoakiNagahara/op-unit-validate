@@ -398,7 +398,8 @@ class Validate implements IF_UNIT
 					break;
 
 				default:
-					D("Has not been define this evalution. ($key)");
+					D("Has not been define this evaluation. ($key)");
+					$failed = true;
 			}
 
 			//	...
