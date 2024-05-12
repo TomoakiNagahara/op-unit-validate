@@ -44,7 +44,7 @@ class Validate implements IF_UNIT
 	 * @param  string  $value
 	 * @return boolean $failed
 	 */
-	static private function _Email($value)
+	static private function _Email(string $value)
 	{
 		//	Do not allow alias names.
 		if( strpos($value, '+') !== false ){
