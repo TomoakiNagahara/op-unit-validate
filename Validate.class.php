@@ -91,7 +91,7 @@ class Validate implements IF_UNIT
 	 * @param  string $source
 	 * @return boolean
 	 */
-	static private function _Phone($value)
+	static private function _Phone(string $value)
 	{
 		$m = null;
 		if( preg_match('/[^-0-9\.\+\ )]/i', $value, $m) ){
