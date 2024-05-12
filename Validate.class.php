@@ -246,7 +246,7 @@ class Validate implements IF_UNIT
 	/** Evaluations
 	 *
 	 * @param  array   $configs Validate configuration.
-	 * @param  array   $values  Evalution value.
+	 * @param  array   $values  Evaluation value.
 	 * @param  array   $errors  Errors
 	 * @return boolean $io      True is successful.
 	 */
@@ -283,7 +283,7 @@ class Validate implements IF_UNIT
 	 * @param  array   $values
 	 * @return boolean $fail
 	 */
-	function Evaluation($rule, $value, &$error, $values=null)
+	static function Evaluation($rule, $value, &$error, $values=null)
 	{
 		//	...
 		$rule  = Encode($rule);
