@@ -42,7 +42,7 @@ class Validate implements IF_UNIT
 	/** EMail
 	 *
 	 * @param  string  $value
-	 * @return boolean $failed
+	 * @return boolean|string $failed
 	 */
 	static private function _Email(string $value)
 	{
@@ -84,6 +84,9 @@ class Validate implements IF_UNIT
 		if(!gethostbynamel($host) ){
 			return $host;
 		}
+
+		//	...
+		return false;
 	}
 
 	/** Phone

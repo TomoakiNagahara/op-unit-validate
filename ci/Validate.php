@@ -30,7 +30,7 @@ $ci->Set($method, $result, $args);
 
 //	...
 $method = '_Email';
-$result =  null;
+$result =  false;
 $args   = ['root@localhost'];
 $ci->Set($method, $result, $args);
 
