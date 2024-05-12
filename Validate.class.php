@@ -37,6 +37,7 @@ class Validate implements IF_UNIT
 	 *
 	 */
 	use OP_CORE, OP_UNIT;
+	use \OP\OP_CI;
 
 	/** EMail
 	 *
