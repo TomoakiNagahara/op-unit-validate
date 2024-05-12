@@ -84,9 +84,6 @@ class Validate implements IF_UNIT
 		if(!gethostbynamel($host) ){
 			return $host;
 		}
-
-		//	...
-		return false;
 	}
 
 	/** Phone
