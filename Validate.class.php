@@ -22,6 +22,7 @@ use OP\OP_CORE;
 use OP\OP_UNIT;
 use OP\IF_UNIT;
 use function OP\Encode;
+use OP\IF_VALIDATE;
 
 /** Validate
  *
@@ -31,7 +32,7 @@ use function OP\Encode;
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
-class Validate implements IF_UNIT
+class Validate implements IF_UNIT, IF_VALIDATE
 {
 	/** trait
 	 *
