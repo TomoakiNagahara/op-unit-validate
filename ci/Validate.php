@@ -25,7 +25,7 @@ $ci = OP::Unit('CI')::Config();
 $meta_path = \OP\RootPath('asset').'unit/validate/template/ci.txt';
 $method = 'Template';
 $args   = 'ci.txt';
-$result = "Notice: This file is not located in the template directory. ({$meta_path})";
+$result = "Notice: This file is not located in the template directory: {$meta_path}";
 $ci->Set($method, $result, $args);
 
 //	...
