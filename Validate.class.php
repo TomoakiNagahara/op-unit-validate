@@ -399,6 +399,13 @@ class Validate implements IF_UNIT, IF_VALIDATE
 					}
 					break;
 
+				/** The "confirm" is compare the values of the two inputs
+				 *  It is used, for example, to confirm the password entered during registration.
+				 */
+				case 'confirm':
+					$error[$key] = !($value === $values[$eval]);
+					break;
+
 				default:
 					D("This validation is not defined: `{$key}`");
 					$failed = true;
