@@ -419,7 +419,7 @@ class Validate implements IF_UNIT, IF_VALIDATE
 					break;
 
 				default:
-					D("This validation is not defined: `{$key}`");
+					OP()->Notice("This validation is not defined: `{$key}`");
 					$failed = true;
 			}
 
