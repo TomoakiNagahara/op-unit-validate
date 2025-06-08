@@ -131,6 +131,16 @@ class Validate implements IF_UNIT, IF_VALIDATE
 				$eval = '/([^0-9a-z]+)/i';
 				break;
 
+			//	Can be used for user name validation.
+			case 'username':
+				$eval = '/([^ _a-zA-Z0-9\'"`@]+)/u';
+				break;
+
+			//	Can be used for password validation.
+			case 'password':
+				$eval = '/([^\x21-\x7E])/u';
+				break;
+
 			case 'kana':
 				$eval = '/([^\p{Hiragana}\p{Katakana}]+)/';
 				break;
