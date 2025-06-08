@@ -340,6 +340,8 @@ class Validate implements IF_UNIT, IF_VALIDATE
 				case 'english':
 				case 'alphabet':
 				case 'alphanumeric':
+				case 'username':
+				case 'password':
 				case 'han':
 				case 'kana':
 				case 'hiragana':
