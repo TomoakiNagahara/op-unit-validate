@@ -1,21 +1,19 @@
 <?php
-/**
- * unit-validate:/Validate.class.php
+/**	op-unit-validate:/Validate.class.php
  *
  * @created   2017-01-31
- * @version   1.0
- * @package   unit-validate
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @license   Apache-2.0
+ * @package   op-unit-validate
+ * @copyright Tomoaki Nagahara
  */
 
-/** namespace
+/**	Namespace
  *
  * @created   2018-01-22
  */
 namespace OP\UNIT;
 
-/** Used class
+/**	Use
  *
  */
 use OP\OP_CORE;
@@ -24,13 +22,9 @@ use OP\IF_UNIT;
 use function OP\Encode;
 use OP\IF_VALIDATE;
 
-/** Validate
+/**	Validate
  *
  * @created   2017-01-31
- * @version   1.0
- * @package   unit-validate
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
  */
 class Validate implements IF_UNIT, IF_VALIDATE
 {
