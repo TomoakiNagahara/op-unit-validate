@@ -55,5 +55,6 @@ OP()->Form()->Validate();
  * alphanumeric
  * english
  * email
+ * url
  * domain
  * phone

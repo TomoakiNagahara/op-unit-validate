@@ -97,6 +97,17 @@ class Validate implements IF_UNIT, IF_VALIDATE
 		}
 	}
 
+	/**	_URL
+	 *
+	 * @created   2026-02-15 by Codex CLI
+	 * @param     string         $value
+	 * @return    boolean|string $failed
+	 */
+	static private function _URL( string $value )
+	{
+		return include(__DIR__.'/include/_URL.php');
+	}
+
 	/** Regular Expression
 	 *
 	 * @see		 https://msdn.microsoft.com/ja-jp/library/20bw873z.aspx
@@ -363,6 +374,10 @@ class Validate implements IF_UNIT, IF_VALIDATE
 
 				case 'phone':
 					$error[$key] = self::_Phone($value);
+					break;
+
+				case 'url':
+					$error[$key] = self::_URL($value);
 					break;
 
 				case 'short':
