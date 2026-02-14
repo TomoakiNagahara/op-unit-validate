@@ -1,25 +1,31 @@
 <?php
-/** op-unit-validate:/ci/Validate.php
+/**	op-unit-validate:/ci/Validate.php
  *
  * @created    2024-05-09
- * @version    1.0
+ * @license    Apache-2.0
  * @package    op-unit-validate
- * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright  Tomoaki Nagahara All right reserved.
+ * @copyright  Tomoaki Nagahara
  */
 
-/** Declare strict
+/**	Declare strict type
  *
  */
 declare(strict_types=1);
 
-/** namespace
+/**	Namespace
  *
  */
 namespace OP;
 
-//	...
-$ci = OP::Unit('CI')::Config();
+/* @var $ci \OP\UNIT\CI\CI_Config */
+$ci = OP()->Unit()->CI()->Config();
+
+//	Include sub directory files.
+$name = basename(__FILE__);
+$name = explode('.', $name)[0];
+foreach( glob(__DIR__."/{$name}/*.php") as $path ){
+	require_once($path);
+}
 
 //	Template
 $meta_path = \OP\RootPath('asset').'unit/validate/template/ci.txt';
@@ -88,6 +94,17 @@ $result =  false;
 $args   = [
 	'required',
 	'',
+	$errors,
+];
+$ci->Set($method, $result, $args);
+
+//	...
+$errors = null;
+$method = 'Evaluation';
+$result =  true;
+$args   = [
+	'url',
+	'https://example.com/',
 	$errors,
 ];
 $ci->Set($method, $result, $args);
