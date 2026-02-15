@@ -41,47 +41,7 @@ class Validate implements IF_UNIT, IF_VALIDATE
 	 */
 	static private function _Email(string $value)
 	{
-		//	Do not allow alias names.
-		if( strpos($value, '+') !== false ){
-			return '+';
-		}
-
-		//	...
-		if(($pos = strpos($value, '@')) === false ){
-			return '@';
-		}
-
-		//	...
-		$addr = substr($value, 0, $pos);
-		$host = substr($value, $pos + 1);
-
-		//	...
-		if( empty($addr) ){
-			return true;
-		}
-
-		//	...
-		$m = null;
-		if( preg_match('/([^-\._0-9a-z]+)/i', $addr, $m) ){
-			return $m[1];
-		}
-
-		//	...
-		/*
-		if( $host !== 'gmail.com' ){
-			if(!checkdnsrr($host,'MX') ){
-				return $host;
-			}
-		}
-		*/
-
-		//	...
-		if(!gethostbynamel($host) ){
-			return $host;
-		}
-
-		//	...
-		return false;
+		return include(__DIR__.'/include/_Email.php');
 	}
 
 	/** Phone
