@@ -88,21 +88,7 @@ class Validate implements IF_UNIT, IF_VALIDATE
 	 */
 	static private function _Required($value)
 	{
-		//	...
-		$error = true;
-
-		//	...
-		if( is_array($value) ){
-			$value = join('', $value);
-		}
-
-		//	...
-		if( is_string($value) and strlen($value) ){
-			$error = false;
-		}
-
-		//	...
-		return $error;
+		return include(__DIR__.'/include/_Required.php');
 	}
 
 	static function _ParseString($strings)
