@@ -41,12 +41,6 @@ $args   = ['090-0000-0000'];
 $ci->Set($method, $result, $args);
 
 //	...
-$method = '_RegExp';
-$result = ['test','test'];
-$args   = ['test','integer'];
-$ci->Set($method, $result, $args);
-
-//	...
 $method = '_Required';
 $result =  false;
 $args   = ['test'];
