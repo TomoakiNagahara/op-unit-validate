@@ -90,7 +90,13 @@ class Validate implements IF_UNIT, IF_VALIDATE
 		return include(__DIR__.'/include/_Required.php');
 	}
 
-	static function _ParseString($strings)
+	/**	Parse a comma-separated validation rule string.
+	 *
+	 * @created    2026-02-17
+	 * @param      string     $string
+	 * @return     array
+	 */
+	private static function SplitRuleString( string $strings ) : array
 	{
 		//	...
 		$config = [];
@@ -168,7 +174,7 @@ class Validate implements IF_UNIT, IF_VALIDATE
 
 		//	...
 		if( is_string($rule) ){
-			$rule = self::_ParseString($rule);
+			$rule = self::SplitRuleString($rule);
 		}
 
 		//	...
