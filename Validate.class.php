@@ -196,7 +196,23 @@ class Validate implements IF_UNIT, IF_VALIDATE
 		return $failed ? false: true;
 	}
 
-	/** Evaluate each value.
+	/**	Evaluate each value.
+	 *
+	 * <pre>
+	 * $form = [
+	 *     'name' => 'example',
+	 * ];
+	 *
+	 * $form['input'][] = [
+	 *     'type' => 'password',
+	 *     'rule' => 'short(8), long(32)',
+	 * ];
+	 *
+	 * $form['input'][] = [
+	 *     'type' => 'number',
+	 *     'rule' => 'min(0), max(100)',
+	 * ];
+	 * </pre>
 	 *
 	 * @param  string  $rule
 	 * @param  array   $value
