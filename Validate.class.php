@@ -19,7 +19,6 @@ namespace OP\UNIT;
 use OP\OP_CORE;
 use OP\OP_UNIT;
 use OP\IF_UNIT;
-use function OP\Encode;
 use OP\IF_VALIDATE;
 
 /**	Validate
@@ -158,9 +157,11 @@ class Validate implements IF_UNIT, IF_VALIDATE
 	 */
 	static function Evaluation($rule, $value, &$error, $values=null)
 	{
+		/*	Disbled for URL, Regex, Email
 		//	...
-		$rule  = Encode($rule);
-		$value = Encode($value);
+		$rule  = OP()->Encode($rule);
+		$value = OP()->Encode($value);
+		*/
 
 		//	...
 		$failed = null;
