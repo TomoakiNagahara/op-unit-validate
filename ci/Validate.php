@@ -35,12 +35,6 @@ $result = "Notice: This file is not located in the template directory: `{$meta_p
 $ci->Set($method, $result, $args);
 
 //	...
-$method = '_Phone';
-$result =  null;
-$args   = ['090-0000-0000'];
-$ci->Set($method, $result, $args);
-
-//	...
 $errors = null;
 $method = 'Evaluations';
 $result =  true;
