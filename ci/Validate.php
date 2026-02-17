@@ -35,37 +35,4 @@ $result = "Notice: This file is not located in the template directory: `{$meta_p
 $ci->Set($method, $result, $args);
 
 //	...
-$errors = null;
-$method = 'Evaluation';
-$result =  false;
-$args   = [
-	'required',
-	'',
-	$errors,
-];
-$ci->Set($method, $result, $args);
-
-//	...
-$errors = null;
-$method = 'Evaluation';
-$result =  true;
-$args   = [
-	'url',
-	'https://example.com/',
-	$errors,
-];
-$ci->Set($method, $result, $args);
-
-//	...
-$errors = null;
-$method = 'Evaluation';
-$result =  true;
-$args   = [
-	'email',
-	'root@localhost',
-	$errors,
-];
-$ci->Set($method, $result, $args);
-
-//	...
 return $ci->Get();
