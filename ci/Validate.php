@@ -36,17 +36,6 @@ $ci->Set($method, $result, $args);
 
 //	...
 $errors = null;
-$method = 'Evaluations';
-$result =  true;
-$args   = [
-	['integer','ascii'],
-	['1234567890','abcdefg'],
-	$errors,
-];
-$ci->Set($method, $result, $args);
-
-//	...
-$errors = null;
 $method = 'Evaluation';
 $result =  false;
 $args   = [
