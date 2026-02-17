@@ -102,7 +102,7 @@ class Validate implements IF_UNIT, IF_VALIDATE
 		$config = [];
 
 		//	...
-		foreach( explode(',', $strings) as $string ){
+		foreach( self::SplitComma($strings) as $string ){
 			if( $st  = strpos($string, '(') and
 				$en  = strpos($string, ')') ){
 				$val = substr($string, $st +1, $en - $st -1);
@@ -119,6 +119,49 @@ class Validate implements IF_UNIT, IF_VALIDATE
 
 		//	...
 		return $config;
+	}
+
+	/**	Convert to array from comma-separated rules.
+	 *
+	 * @created    2026-02-17
+	 * @param      string     $string
+	 * @return     array
+	 */
+	private static function SplitComma( string $string ) : array
+	{
+		//	...
+		$result = [];
+
+		//	...
+		do{
+			//	...
+			$string = trim($string);
+			$string = trim($string,',');
+
+			//	...
+			if( 0 === strpos($string, 'regex') ){
+				//	...
+				$match = [];
+				if(!preg_match('|^regexp?\(/.*?/\),|', $string.',', $match)){
+					throw new \Exception("Format error: {$string}");
+				}
+				$len = mb_strlen($match[0]);
+				$result[] = mb_substr($string, 0, $len-1);
+				$string   = mb_substr($string, $len +1);
+			}else{
+				//	...
+				if( $pos = mb_strpos($string, ',') ){
+					$result[] = mb_substr($string, 0, $pos);
+					$string   = mb_substr($string, $pos +1);
+				}else{
+					$result[] = $string;
+					$string = '';
+				}
+			}
+		}while($string);
+
+		//	...
+		return $result;
 	}
 
 	/** Evaluations
